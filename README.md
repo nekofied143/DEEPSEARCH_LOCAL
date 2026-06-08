@@ -1,87 +1,110 @@
-# Smart Deep Search Tool v2
+# 🔍 DEEPSEARCH_LOCAL
 
-A lightweight PowerShell-based document search utility for Windows that uses the Windows Search Index to quickly find documents by content.
+<p align="center">
+  <img src="https://img.shields.io/badge/Platform-Windows-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/PowerShell-5.1+-5391FE?style=for-the-badge&logo=powershell" />
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" />
+</p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=nekofied143&repo=DEEPSEARCH_LOCAL&label=Repository+Views&color=blueviolet&style=for-the-badge" />
+</p>
+
+<p align="center">
+  Fast local document search powered by the Windows Search Index.
+</p>
+
+---
+
+## Overview
+
+**DEEPSEARCH_LOCAL** is a lightweight PowerShell utility that performs instant full-text searches across indexed documents on your Windows system.
+
+Instead of manually browsing folders, the tool leverages the Windows Search service to locate relevant documents by content and allows you to open matching files directly from an interactive console interface.
+
+---
 
 ## Features
 
-* Fast full-text search using the Windows Search Index
-* Searches document contents, not just file names
-* Supports:
+✅ Full-text document search
 
-  * PDF (`.pdf`)
-  * Microsoft Word (`.docx`)
-  * Microsoft Excel (`.xlsx`)
-* Interactive command-line interface
-* Open one or multiple search results directly
-* No third-party dependencies required
-* Simple and portable
+✅ Uses the built-in Windows Search Index
+
+✅ Supports:
+
+* PDF (`.pdf`)
+* Microsoft Word (`.docx`)
+* Microsoft Excel (`.xlsx`)
+
+✅ Interactive command-line interface
+
+✅ Open multiple search results at once
+
+✅ No external dependencies
+
+✅ Lightweight and portable
+
+---
 
 ## Requirements
 
-* Windows 10 or Windows 11
-* Windows Search service enabled and indexing configured
+* Windows 10 / Windows 11
+* Windows Search Service enabled
+* Indexed document locations
 * PowerShell 5.1 or later
 
-## Installation
+---
 
-1. Download or clone this repository.
-
-```bash
-git clone https://github.com/nekofied143/DEEPSEARCH_LOCAL.git
-```
-
-2. Place the following files in the same folder:
+## Repository Structure
 
 ```text
-SearchTool.cmd
-DeepSearch.ps1
+DEEPSEARCH_LOCAL
+│
+├── SearchTool.cmd
+├── DeepSearch.ps1
+└── README.md
 ```
+
+---
 
 ## Usage
 
-Run:
+Launch the tool:
 
 ```cmd
 SearchTool.cmd
 ```
 
-Enter a keyword when prompted:
+Enter a keyword:
 
 ```text
 Enter keyword: invoice
 ```
 
-The tool will search indexed documents and display matching results.
-
-Example:
+Example output:
 
 ```text
+Found 3 matching document(s).
+
 1. C:\Documents\Invoice_2025.pdf
-2. D:\Reports\Annual_Report.docx
-3. C:\Finance\Budget.xlsx
+2. D:\Reports\ClientInvoice.docx
+3. C:\Finance\Invoices.xlsx
 ```
 
-To open documents:
+Open selected results:
 
 ```text
-1 3
+1 2
 ```
 
-This opens results #1 and #3.
+Commands:
 
-Additional commands:
+| Command | Description  |
+| ------- | ------------ |
+| S       | Search Again |
+| E       | Exit         |
 
-```text
-S
-```
-
-Search again.
-
-```text
-E
-```
-
-Exit the application.
+---
 
 ## How It Works
 
@@ -93,28 +116,61 @@ FROM SYSTEMINDEX
 WHERE FREETEXT('keyword')
 ```
 
-Results are filtered to include only:
+Results are filtered to:
 
-```text
-C:\
-D:\
-.pdf
-.docx
-.xlsx
+* `C:\`
+* `D:\`
+
+And file types:
+
+* `.pdf`
+* `.docx`
+* `.xlsx`
+
+Selected files are then opened using their default Windows applications.
+
+---
+
+## Why Use DEEPSEARCH_LOCAL?
+
+* Instant results from indexed content
+* No database setup required
+* Minimal system resource usage
+* Ideal for large document collections
+* Works completely offline
+* Built entirely with PowerShell
+
+---
+
+## Screenshot
+
+Add a screenshot here:
+
+```markdown
+![DEEPSEARCH_LOCAL](screenshot.png)
 ```
 
-Matching documents can then be opened directly from the interface.
+---
 
-## Notes
+## Contributing
 
-* Only indexed files can be found.
-* If a folder is not indexed by Windows Search, documents inside it will not appear in results.
-* Search performance depends on the state of the Windows Search Index.
+Contributions, bug reports, and feature suggestions are welcome.
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Submit a Pull Request
+
+---
 
 ## License
 
-MIT License
+This project is licensed under the MIT License.
+
+---
 
 ## Author
 
-Created with PowerShell to provide a fast and simple way to search document contents using Windows Search.
+Developed by **Nekofied**
+
+If you find this project useful, consider giving it a ⭐ on GitHub.
