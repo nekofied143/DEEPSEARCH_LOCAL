@@ -144,11 +144,7 @@ Selected files are then opened using their default Windows applications.
 
 ## Screenshot
 
-Add a screenshot here:
-
-```markdown
 ![DEEPSEARCH_LOCAL](screenshot.png)
-```
 
 ---
 
